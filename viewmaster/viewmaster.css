@@ -1,0 +1,86 @@
+.vmSlideshow {
+	width: 910px;
+	height: 455px;
+	padding-top: 455px;
+	margin: 0 auto;
+	display: none; /* will fade in later */
+	position: relative;
+	background: -webkit-gradient(radial, center center, 0, center center, 455, from( rgba(255, 255, 255, 0.6) ), to( transparent ) );
+	background: -moz-radial-gradient( center center, closest-side, rgba(255, 255, 255, 0.6), transparent );
+}
+
+.vmSlideshow .holder {
+	width: 100px; /* outer ring images size is defined by this width */
+	margin: 0 auto;
+	-webkit-transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	   -moz-transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	     -o-transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	        transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+}
+
+.vmSlideshow img {
+	width: 100%;
+	position: absolute;
+	border: solid 1px #fff;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+	   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+	     -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+	        box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+	-webkit-transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	   -moz-transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	     -o-transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+	        transition: all 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+}
+
+.vmSlideshow .current {
+	width: 600px;
+}
+
+.vmSlideshow .current img {
+	border-width: 8px;
+	margin-left: -8px; /* set to same as border */
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+	   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+	     -o-box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+	        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+
+/* Next and Previous Buttons */
+.vmSlideshow #prev, .vmSlideshow #next {
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	z-index: 10;
+	background: url('arrow.png') no-repeat;
+	text-indent: -9999em;
+	opacity: 0.8;
+	-webkit-transition: all 200ms linear;
+	   -moz-transition: all 200ms linear;
+	     -o-transition: all 200ms linear;
+	        transition: all 200ms linear;
+}
+.vmSlideshow #prev {
+	left: 85px;
+}
+.vmSlideshow #next {
+	right: 85px;
+	-webkit-transform: scaleX(-1);
+	   -moz-transform: scaleX(-1); /* mirror the prev button */
+		 -o-transform: scaleX(-1);
+			transform: scaleX(-1);
+			   filter: FlipH;
+		   -ms-filter: "FlipH";
+}
+
+.vmSlideshow #prev:hover, .vmSlideshow #next:hover {
+	opacity: 1;
+}
+
+.vmSlideshow #prev:active, .vmSlideshow #next:active {
+	margin-top: -23px; /* 2px bump */
+}
