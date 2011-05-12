@@ -1,0 +1,167 @@
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>	   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>	   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>jQuery ViewMaster CSS3 Slideshow - Matthew Lein</title>
+	<meta name="description" content="">
+	<meta name="author" content="Matthew Lein">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/style.css?v=1">
+
+	<link rel="stylesheet" href="viewmaster/viewmaster.css">
+	
+	<link  href="http://fonts.googleapis.com/css?family=Lato:400,400italic" rel="stylesheet" type="text/css" >
+
+<style>
+
+h1, h2 {
+	font-family: 'Lato';
+}
+
+
+	.description {
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		padding: 15px;
+		background-color: #FFF;
+		width: 300px;
+		z-index: 30;
+		-webkit-border-radius: 7px;
+		   -moz-border-radius: 7px;
+		        border-radius: 7px;
+		-webkit-box-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.7 );
+		   -moz-box-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.7 );
+		     -o-box-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.7 );
+		        box-shadow: 1px 1px 3px rgba( 0, 0, 0, 0.7 );
+	}
+
+	.description h1 {
+		margin: -4px 0 0 0;
+		font-size: 25px;
+	}
+
+	.description h2 {
+		margin: 0;
+		margin-bottom: 10px;
+		font-size: 15px;
+		font-style: italic;
+		color: #555;
+	}
+
+	.description p {
+		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	.description a {
+		text-decoration: none;
+		color: #2c5797;
+	}
+
+	.description a:hover {
+		text-decoration: underline;
+	}
+	
+	.twitter-share-button {
+		position: absolute;
+		right: 18px;
+		top: 18px;
+	}
+	
+	.downloadGithub {
+		color: #222;
+		padding-top: 5px;
+		padding-right: 10px;
+		padding-bottom: 5px;
+		padding-left: 10px;
+		margin: 0 0 10px 0;
+		display: inline-block;
+		text-decoration: none;
+		border:1px solid #C4C4C4;
+		border-radius: 4px;
+		-moz-border-radius: 4px;
+		background: #fcfff4; /* old browsers */
+		background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* firefox */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfff4), color-stop(40%,#dfe5d7), color-stop(100%,#b3bead)); /* webkit */
+	}
+	.description .downloadGithub:hover {
+		text-decoration: none;	
+	}
+	.downloadGithub:active {
+		background: -moz-linear-gradient(top, #b3bead 0%, #dfe5d7 40%, #fcfff4 100%); /* firefox */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3bead), color-stop(40%,#dfe5d7), color-stop(100%,#fcfff4));
+	}
+	
+	#comments {
+		width: 600px;
+		margin: 0 auto;
+		color: #E5E5E5;
+	}
+
+	#comments a {
+		color: #888;
+	}
+	
+</style>
+
+</head>
+
+<body>
+
+	<section class="description">
+		<hgroup>
+			<h1>jQuery ViewMaster</h1>
+			<h2>by Matthew Lein</h2>
+		</hgroup>
+		<a href="http://twitter.com/share" class="twitter-share-button" data-text="jQuery ViewMaster CSS3 Slideshow - Matthew Lein" data-count="none" data-via="matthewlein">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+		
+		<p>This is a slideshow demo I put together to try out some jQuery manipulation of CSS3 rotation and translation. It’s based on the old ViewMaster toy.</p>
+		<p>Use arrow keys or click any photo.<br>Best viewed in Chrome.</p>
+		
+		<a href="https://github.com/matthewlein/jQuery-ViewMaster" class="downloadGithub">Download at GitHub</a>
+		
+		<p>&lt; <a href="/experiments/">More of my experiments</a></p>
+		
+	</section>
+
+	<!-- where I want the viewmaster slideshow  -->
+	<section id="gallery">
+	</section>
+
+	<section id="comments">
+		<!--#include virtual="/inc/experiment-disqus.html" -->
+	</section>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='js/jquery-1.5.2.min.js'>\x3C/script>")</script>
+
+<script src="viewmaster/jquery.viewmaster.js"></script>
+
+
+<script>
+
+$(document).ready(function() {
+
+	$('#gallery').viewMaster({
+		source : 'xml/data.xml',
+		arrows : false // hide arrows
+	})
+
+});
+		
+var disqus_identifier = 'jQuery ViewMaster'; 
+		
+		
+</script>
+
+</body>
+</html>
